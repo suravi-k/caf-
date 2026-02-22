@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ddej4uves Café</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-sparkles" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <section id="start-screen" class="screen active" aria-label="Start screen">
+        <div class="card hero-card floaty">
+          <p class="subtitle">cozy serving challenge</p>
+          <h1>ddej4uves Café</h1>
+          <p class="desc">
+            Welcome to a calm, magical corner café. Serve orders quickly, protect your hearts,
+            and build your best combo streak.
+          </p>
+          <div class="hero-actions">
+            <button id="start-btn" class="btn primary">Start Game</button>
+            <button id="sound-toggle" class="btn ghost" aria-pressed="true">🔊 Sound: On</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="game-screen" class="screen" aria-label="Main game screen">
+        <header class="hud card">
+          <div class="stat">
+            <span>Coins</span>
+            <strong id="coins">0</strong>
+          </div>
+          <div class="stat">
+            <span>Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="stat combo" id="combo-wrapper">
+            <span>Combo</span>
+            <strong id="combo">x1</strong>
+          </div>
+          <div class="stat lives" aria-label="Lives">
+            <span>Lives</span>
+            <div id="lives" class="lives-row">❤️ ❤️ ❤️</div>
+          </div>
+        </header>
+
+        <section class="customer-lane" id="customer-lane" aria-label="Customer area"></section>
+
+        <section class="station card">
+          <h2>Ingredient Station</h2>
+          <div id="ingredients" class="ingredient-grid" aria-label="Ingredients">
+            <button class="ingredient" draggable="true" data-item="Coffee">☕ Coffee</button>
+            <button class="ingredient" draggable="true" data-item="Peach ice tea">🍑 Peach ice tea</button>
+            <button class="ingredient" draggable="true" data-item="Croissant">🥐 Croissant</button>
+            <button class="ingredient" draggable="true" data-item="Boba">🧋 Boba</button>
+            <button class="ingredient" draggable="true" data-item="Latte">🥛 Latte</button>
+          </div>
+        </section>
+
+        <section
+          id="tray-dropzone"
+          class="tray card"
+          aria-label="Tray drop zone"
+          tabindex="0"
+        >
+          <h2>Serving Tray</h2>
+          <p>Drag an item here to serve the first waiting customer.</p>
+          <div id="tray-preview" class="tray-preview">Ready to serve ✨</div>
+        </section>
+      </section>
+
+      <section id="game-over-screen" class="screen" aria-label="Game over screen">
+        <div class="card game-over-card floaty">
+          <h2>Shift Complete</h2>
+          <p>Final Score: <strong id="final-score">0</strong></p>
+          <p>Best Score: <strong id="best-score">0</strong></p>
+          <button id="restart-btn" class="btn primary">Restart</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
